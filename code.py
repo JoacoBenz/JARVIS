@@ -46,7 +46,7 @@ def greeting():
 def takecommmand():
     r = sr.Recognizer() 
  
-    with sr.Microphone(device_index=5) as source:
+    with sr.Microphone() as source:
         print('Speak Anything : ')
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -91,4 +91,5 @@ if __name__ == '__main__':
             speak(result)
 
         elif 'joke' in query:
+            speak("Here´s a joke for you: ")
             jokes()
