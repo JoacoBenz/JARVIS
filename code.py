@@ -4,9 +4,6 @@ import speech_recognition as sr
 import wikipedia as w
 import pyjokes
 
-#Prueba anasheo
-#prrueba 2
-
 engine = pyttsx3.init()
 
 rate = engine.getProperty('rate')
