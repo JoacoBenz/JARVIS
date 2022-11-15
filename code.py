@@ -4,10 +4,11 @@ import speech_recognition as sr
 import wikipedia as w
 import pyjokes
 
+
 engine = pyttsx3.init()
 
 rate = engine.getProperty('rate')
-engine.setProperty('rate', 150)
+engine.setProperty('rate', 180)
 
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
@@ -91,5 +92,5 @@ if __name__ == '__main__':
             speak(result)
 
         elif 'joke' in query:
-            speak("Here´s a joke for you: ")
+            speak("Here's a joke for you: ")
             jokes()
