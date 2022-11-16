@@ -81,16 +81,16 @@ if __name__ == '__main__':
         elif 'date' in query:
             date()
 
-        elif 'turn off' in query:
-            speak("Goodbye!")
-            quit()
-
-        elif "wikipedia" in query:
+        elif "search" in query:
             speak("Searching...")
-            query = query.replace("wikipedia", "")
+            query = query.replace("search", "")
             result = w.summary(query, sentences = 2)
             speak(result)
 
         elif 'joke' in query:
             speak("Here's a joke for you: ")
             jokes()
+
+        elif 'turn off' in query:
+            speak("Goodbye!")
+            quit()
