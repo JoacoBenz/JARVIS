@@ -11,7 +11,7 @@ rate = engine.getProperty('rate')
 engine.setProperty('rate', 180)
 
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[1].id)
+engine.setProperty('voice', voices[0].id)
 
 def speak (audio):
     engine.say(audio)
@@ -35,11 +35,11 @@ def greeting():
     speak("Welcome! I'm Riley")
 
     hour = datetime.datetime.now().hour
-    if hour >= 1 and hour < 12:
+    if hour >= 5 and hour < 12:
         speak("Good morning")
     elif hour >=12 and hour < 18:
         speak("Good afternoon")
-    elif hour >= 18 and hour < 24:
+    else:
         speak("Good evening")
 
     speak("How can i help you?")
@@ -83,8 +83,9 @@ if __name__ == '__main__':
 
         elif "search" in query:
             speak("Searching...")
-            query = query.replace("search", "")
+            query = query.replace("search ", "")
             result = w.summary(query, sentences = 2)
+            print(result)
             speak(result)
 
         elif 'joke' in query:
